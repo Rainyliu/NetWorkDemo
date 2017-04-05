@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.android.networkdemo.ui.HomeActivity">
+
+    <Button
+        android:layout_marginTop="100dp"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:text="获取数据"
+        android:id="@+id/tv"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_width="300dp"
+        android:layout_height="100dp" />
+    <Button
+        android:gravity="center"
+        android:text="下载测试"
+        android:id="@+id/iv"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:gravity="center"
+        android:text="暂停下载"
+        android:id="@+id/stop"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:gravity="center"
+        android:text="继续下载"
+        android:id="@+id/keep"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

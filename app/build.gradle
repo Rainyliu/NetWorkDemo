@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.android.networkdemo"
+        minSdkVersion 21
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //Retrofit
+    //日志打印
+    //okHttp
+    //eventbus
+    //6.0权限问题
+    //rx系列之下载
+    //rxbus
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    compile 'com.orhanobut:logger:1.15'
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.github.jksiezni.permissive:permissive:0.2'
+    compile 'com.lovedise:permissiongen:0.0.6'
+//    compile 'zlc.season:rxdownload2:2.0.0-beta4'
+//    compile 'com.hwangjr.rxbus:rxbus:1.0.5'
+    testCompile 'junit:junit:4.12'
+    compile 'com.joy.rxbus:RxBus:1.0.0'
+    compile 'io.reactivex:rxandroid:1.0.1'
+}
