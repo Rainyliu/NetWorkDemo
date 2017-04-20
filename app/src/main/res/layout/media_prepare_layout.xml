@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" >
+
+        <ProgressBar
+            android:id="@+id/media_prepare_p_id"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:indeterminateDrawable="@anim/cm_progress_anim" >
+        </ProgressBar>
+        <!--  -->
+        <ImageView
+            android:id="@+id/media_prepare_image_bg"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/icon_loading_bg" />
+
+        <TextView
+            android:id="@+id/tv_prepare_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:singleLine="true"
+            android:textColor="#ffffff"
+            android:textSize="30sp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_prepare_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_prepare_speed"
+            android:layout_centerHorizontal="true"
+            android:singleLine="true"
+            android:textColor="#ffffff"
+            android:textSize="30sp" >
+        </TextView>
+    </RelativeLayout>
+
+</RelativeLayout>

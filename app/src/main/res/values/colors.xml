@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#55000000</color>
+    <color name="black_light_transparent">#e0000000</color>
+    <color name="video_restart_color">#bec1c3</color>
+    <color name="gray_translucence">#30ffffff</color>
+
+
 </resources>

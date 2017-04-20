@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/launch_bg"
+    tools:context="com.android.networkdemo.ui.TvHomeActivity">
+
+    <RadioGroup
+        android:paddingRight="60dp"
+        android:paddingLeft="120dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="60dp"
+        android:id="@+id/title_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            style="@style/TitleButton"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:nextFocusLeft="@+id/tv_show"
+            android:text="第一"
+            android:button="@null"
+            android:id="@+id/rb1"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            style="@style/TitleButton"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="第二"
+            android:button="@null"
+            android:id="@+id/rb2"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            style="@style/TitleButton"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="第三"
+            android:button="@null"
+            android:id="@+id/rb3"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/rb4"
+            style="@style/TitleButton"
+            android:layout_width="180dip"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:nextFocusRight="@+id/settings"
+            android:text="第四" />
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/main_layout_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp">
+
+    </android.support.v4.view.ViewPager>
+</RelativeLayout>

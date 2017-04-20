@@ -9,4 +9,5 @@ package com.android.networkdemo.utils.retrofit.api;
  */
 
 public interface DataSourceInterface {
+
 }

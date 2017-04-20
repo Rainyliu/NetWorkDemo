@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/down_toolview"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" >
+
+            <TextView
+                android:id="@+id/tv_curTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="0.105"
+                android:singleLine="true"
+                android:text="00:00"
+                android:textColor="@android:color/white"
+                android:textSize="30sp" >
+            </TextView>
+
+            <SeekBar
+                android:id="@+id/playback_seeker"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.79"
+                android:max="100"
+                android:maxHeight="15dp"
+                android:minHeight="10dp"
+                android:progressDrawable="@drawable/seekbar_background"
+                android:thumb="@drawable/seekbar_thumb"
+                android:thumbOffset="5dp" />
+
+            <!--
+            android:layout_toRightOf="@id/tv_curTime"
+            android:layout_toRightOf="@id/playback_seeker"
+            -->
+
+            <TextView
+                android:id="@+id/tv_totalTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.105"
+                android:singleLine="true"
+                android:text="00:00"
+                android:textColor="@android:color/white"
+                android:textSize="30sp" >
+            </TextView>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/up_toolview"
+        android:layout_width="fill_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentTop="true"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_alignParentBottom="true"
+            android:textColor="@android:color/white"
+            android:textSize="40sp" >
+        </TextView>
+        <!-- android:layout_centerInParent="true" -->
+
+    </RelativeLayout>
+
+</RelativeLayout>

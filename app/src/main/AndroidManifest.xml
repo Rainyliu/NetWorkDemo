@@ -22,12 +22,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".eventbus.SendEventActivity"></activity>
+        <activity android:name=".eventbus.SendEventActivity" />
         <activity android:name=".eventbus.ReceiverEventActivity" />
-        <activity android:name=".ui.HomeActivity">
-
+        <activity android:name=".ui.HomeActivity" />
+        <activity android:name=".ui.RxBusActivity" />
+        <activity android:name=".ui.VideoActivity">
         </activity>
-        <activity android:name=".ui.RxBusActivity">
+        <activity android:name=".ui.TvHomeActivity"></activity>
+        <activity
+            android:name=".ui.ReflectionImageActivity"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name=".ui.CustomVideoActivity"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

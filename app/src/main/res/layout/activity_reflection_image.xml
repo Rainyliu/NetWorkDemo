@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:id="@+id/main"
+    android:focusable="false"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:gravity="center"
+    android:background="@color/colorAccent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="这是测试阴影效果"
+        android:background="@drawable/bg_shadow"
+        android:layout_width="100dp"
+        android:layout_height="200dp" />
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:id="@+id/picture_qian"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:src="@mipmap/a" />
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:layout_marginLeft="30dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:id="@+id/picture_qian1"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:src="@mipmap/b" />
+
+</LinearLayout>
