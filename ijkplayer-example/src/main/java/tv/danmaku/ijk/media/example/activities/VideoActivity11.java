@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
@@ -44,7 +45,7 @@ public class VideoActivity11 extends AppCompatActivity {
     private TableLayout mHudView;
 
     //根布局
-    private DrawerLayout mDrawerLayout;
+    private RelativeLayout mDrawerLayout;
 
     //右边的帧布局
     private ViewGroup mRightDrawer;
@@ -70,7 +71,7 @@ public class VideoActivity11 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        requestWindowFeature(Window.FEATURE_NO_TITLE);//去标题
 
-        setContentView(R.layout.activity_player);
+        setContentView(R.layout.activity_player11);
 
         //透明状态栏
 //         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -142,13 +143,13 @@ public class VideoActivity11 extends AppCompatActivity {
         mHudView = (TableLayout) findViewById(R.id.hud_view);
 
         //根布局,抽屉布局
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerLayout = (RelativeLayout) findViewById(R.id.drawer_layout);
 
         //右边的帧布局
         mRightDrawer = (ViewGroup) findViewById(R.id.right_drawer);
 
         //设置透明背景问题
-        mDrawerLayout.setScrimColor(Color.TRANSPARENT);
+//        mDrawerLayout.setScrimColor(Color.TRANSPARENT);
 
         //initPlayer
         IjkMediaPlayer.loadLibrariesOnce(null);
