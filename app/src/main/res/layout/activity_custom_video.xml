@@ -211,6 +211,8 @@
 
 
     <ImageView
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:id="@+id/play_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

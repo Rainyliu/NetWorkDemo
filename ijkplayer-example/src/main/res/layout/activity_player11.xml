@@ -1,26 +1,36 @@
-<android.support.v4.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".activities.VideoActivity"
     android:id="@+id/drawer_layout"
+    android:background="@color/ijk_transparent_dark"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".activities.VideoActivity">
+
+    <tv.danmaku.ijk.media.example.widget.media.IjkVideoView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+    </tv.danmaku.ijk.media.example.widget.media.IjkVideoView>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ijk_transparent_dark"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:context=".toolbar_widget" />
 
     <!-- The main content view -->
     <FrameLayout
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#0099cc">
-
-        <tv.danmaku.ijk.media.example.widget.media.IjkVideoView11
-            android:id="@+id/video_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center">
-
-        </tv.danmaku.ijk.media.example.widget.media.IjkVideoView11>
-
         <TextView
             android:id="@+id/toast_text_view"
             android:layout_width="wrap_content"
@@ -39,21 +49,65 @@
             android:background="@color/ijk_transparent_dark"
             android:padding="8dp" />
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/ijk_transparent_dark"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            tools:context=".toolbar_widget" />
     </FrameLayout>
 
-    <!-- The navigation drawer -->
-    <FrameLayout android:id="@+id/right_drawer"
+    <!--加载中-->
+    <LinearLayout
+        android:id="@+id/app_video_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:id="@+id/pb"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:indeterminateBehavior="repeat"
+            android:indeterminateOnly="true"/>
+        <TextView
+            android:id="@+id/app_video_speed"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="visible"
+            android:text="188Kb/s"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <!-- 中间触摸提示 亮度、音量等的调节
+    <include
+        layout="@layout/simple_player_touch_gestures"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>-->
+
+    <!-- 顶部栏
+    <include layout="@layout/simple_player_topbar"/>-->
+
+    <!-- 底部栏-->
+    <include
+        layout="@layout/simple_player_controlbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
+    <ImageView
+        android:id="@+id/play_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/play_bg"/>
+
+    <!--&lt;!&ndash; The navigation drawer &ndash;&gt;-->
+    <FrameLayout
+        android:id="@+id/right_drawer"
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="right"
+        android:visibility="gone"
         android:background="@color/ijk_transparent_dark" />
-</android.support.v4.widget.DrawerLayout>
+</RelativeLayout>
