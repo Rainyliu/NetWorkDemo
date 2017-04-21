@@ -1,11 +1,27 @@
 [
     {
+        "merged": "F:\\OpenSouceApp\\NetWorkDemo\\lib\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\179d9b21197b46f483cf3ae695c9bff3e3af5c19\\output\\res\\color\\switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "F:\\OpenSouceApp\\NetWorkDemo\\lib\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\179d9b21197b46f483cf3ae695c9bff3e3af5c19\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "F:\\OpenSouceApp\\NetWorkDemo\\lib\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\179d9b21197b46f483cf3ae695c9bff3e3af5c19\\output\\res\\color\\abc_primary_text_material_dark.xml"
+    },
+    {
         "merged": "D:\\gitRepon\\NetWorkDemo\\lib\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
         "source": "D:\\gitRepon\\NetWorkDemo\\lib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
     {
         "merged": "D:\\gitRepon\\NetWorkDemo\\lib\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
         "source": "D:\\gitRepon\\NetWorkDemo\\lib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\color\\switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "F:\\OpenSouceApp\\NetWorkDemo\\lib\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\179d9b21197b46f483cf3ae695c9bff3e3af5c19\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
         "merged": "D:\\gitRepon\\NetWorkDemo\\lib\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
@@ -28,8 +44,28 @@
         "source": "D:\\gitRepon\\NetWorkDemo\\lib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
+        "merged": "F:\\OpenSouceApp\\NetWorkDemo\\lib\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\179d9b21197b46f483cf3ae695c9bff3e3af5c19\\output\\res\\color\\abc_search_url_text.xml"
+    },
+    {
+        "merged": "F:\\OpenSouceApp\\NetWorkDemo\\lib\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\179d9b21197b46f483cf3ae695c9bff3e3af5c19\\output\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "F:\\OpenSouceApp\\NetWorkDemo\\lib\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\179d9b21197b46f483cf3ae695c9bff3e3af5c19\\output\\res\\color\\abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "F:\\OpenSouceApp\\NetWorkDemo\\lib\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\179d9b21197b46f483cf3ae695c9bff3e3af5c19\\output\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
         "merged": "D:\\gitRepon\\NetWorkDemo\\lib\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
         "source": "D:\\gitRepon\\NetWorkDemo\\lib\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "F:\\OpenSouceApp\\NetWorkDemo\\lib\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\179d9b21197b46f483cf3ae695c9bff3e3af5c19\\output\\res\\color\\abc_secondary_text_material_light.xml"
     },
     {
         "merged": "D:\\gitRepon\\NetWorkDemo\\lib\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
