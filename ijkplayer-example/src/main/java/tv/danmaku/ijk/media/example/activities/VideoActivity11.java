@@ -13,7 +13,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.TableLayout;
 import android.widget.TextView;
@@ -21,6 +24,7 @@ import android.widget.TextView;
 import tv.danmaku.ijk.media.example.R;
 import tv.danmaku.ijk.media.example.widget.media.AndroidMediaController;
 import tv.danmaku.ijk.media.example.widget.media.IjkVideoView;
+import tv.danmaku.ijk.media.example.widget.media.MeasureHelper;
 import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 
 public class VideoActivity11 extends AppCompatActivity {
@@ -64,7 +68,15 @@ public class VideoActivity11 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);//去标题
+
         setContentView(R.layout.activity_player);
+
+        //透明状态栏
+//         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        //透明导航栏
+//         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        //透明导航栏
 
         // handle arguments
         mVideoPath = getIntent().getStringExtra("videoPath");
@@ -109,10 +121,15 @@ public class VideoActivity11 extends AppCompatActivity {
         // init UI
         //布局上方的toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("电视剧");//可以改变影片放映时左上角显示的名字
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
-        mMediaController = new AndroidMediaController(this, false);
+        mMediaController = new AndroidMediaController(this, true);
+//        TextView tv = new TextView(this);
+//        tv.setTextColor(Color.RED);
+//        tv.setText("这里是mMediaController");
+//        mMediaController.showOnce(tv);
         mMediaController.setSupportActionBar(actionBar);
 
         //加载框
@@ -158,6 +175,33 @@ public class VideoActivity11 extends AppCompatActivity {
         }
 
         mVideoView.start();
+    }
+
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_MENU){//菜单键,改变画面比例
+            int aspectRatio = mVideoView.toggleAspectRatio();
+            String aspectRatioText = MeasureHelper.getAspectRatioText(this, aspectRatio);
+            mToastTextView.setText(aspectRatioText);
+            mMediaController.showOnce(mToastTextView);
+            return true;
+        }else if(keyCode == KeyEvent.KEYCODE_DPAD_LEFT){//左键,从头开始播放
+            int player = mVideoView.togglePlayer();
+            String playerText = IjkVideoView.getPlayerText(this, player);
+            mToastTextView.setText(playerText);
+            mMediaController.showOnce(mToastTextView);
+            return true;
+        }else if(keyCode == KeyEvent.KEYCODE_ENTER){//OK键
+            mVideoView.requestFocus();
+            if(mVideoView.isPlaying() && mVideoView != null){
+                mVideoView.pause();
+            }else {
+                mVideoView.start();
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     @Override
