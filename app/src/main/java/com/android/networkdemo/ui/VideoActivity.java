@@ -22,7 +22,8 @@ public class VideoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
-        switchResource();
+//        switchResource();
+        simpleVideo();
 
     }
 
@@ -31,6 +32,7 @@ public class VideoActivity extends AppCompatActivity {
         //简单的播放器的实现
         View rootView = getLayoutInflater().from(this).inflate(R.layout.simple_player_view_player, null);
         setContentView(rootView);
+        String url2 = "http://video.cdn.hd1905.com/movie/feichangrenfan1-needfix.ts?t=1493870367&k=7c889b624279d01eaf402780c0f38eda";
         String url = "http://9890.vod.myqcloud.com/9890_9c1fa3e2aea011e59fc841df10c92278.f20.mp4";
         player = new PlayerView(this,rootView)
                 .setTitle("什么")
@@ -47,7 +49,7 @@ public class VideoActivity extends AppCompatActivity {
                                 .into(ivThumbnail);
                     }
                 })
-                .setPlaySource(url)
+                .setPlaySource(url2)
                 .startPlay();
     }
 
