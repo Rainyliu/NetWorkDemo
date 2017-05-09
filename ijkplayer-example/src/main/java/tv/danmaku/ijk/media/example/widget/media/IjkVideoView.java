@@ -355,6 +355,7 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
         attachMediaController();
     }
 
+    //设置mediaConllector，实际上mediaConllector就是一个FrameLayout，然后盖在videoView上的，用来控制视频的播放
     private void attachMediaController() {
         if (mMediaPlayer != null && mMediaController != null) {
             mMediaController.setMediaPlayer(this);

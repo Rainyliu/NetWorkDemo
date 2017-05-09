@@ -26,21 +26,24 @@
         <activity android:name=".eventbus.ReceiverEventActivity" />
         <activity android:name=".ui.HomeActivity" />
         <activity android:name=".ui.RxBusActivity" />
-        <activity android:name=".ui.VideoActivity"
+        <activity
+            android:name=".ui.VideoActivity"
             android:screenOrientation="landscape">
+
+        </activity>
+        <activity android:name=".ui.TvHomeActivity" />
+        <activity
+            android:name=".ui.ReflectionImageActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.CustomVideoActivity"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name=".ui.DemoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".ui.TvHomeActivity"></activity>
-        <activity
-            android:name=".ui.ReflectionImageActivity"
-            android:screenOrientation="landscape"></activity>
-        <activity android:name=".ui.CustomVideoActivity"
-            android:screenOrientation="landscape">
-
         </activity>
     </application>
 
