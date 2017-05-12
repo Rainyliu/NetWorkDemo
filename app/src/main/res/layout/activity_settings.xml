@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.android.networkdemo.ui.DemoActivity">
+    tools:context="com.android.networkdemo.ui.settings.SettingsActivity">
     <Button
         android:id="@+id/btn1"
-        android:text="跳转到电影详情页面"
+        android:text="跳转到另一个页面"
         android:onClick="click"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
-        android:layout_marginTop="5dp"
         android:id="@+id/btn2"
-        android:text="获取设备信息"
+        android:text="显示圆角图片"
         android:onClick="click"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>

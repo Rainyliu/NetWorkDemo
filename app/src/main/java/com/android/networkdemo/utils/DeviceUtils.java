@@ -2,10 +2,14 @@ package com.android.networkdemo.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Point;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -14,6 +18,9 @@ import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.LineNumberReader;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
@@ -334,5 +341,114 @@ public class DeviceUtils {
         double screenInches = Math.sqrt(x + y);
         return screenInches;
     }
+
+
+    /**
+     * 获取设备的mac地址
+     * @return
+     */
+    public static String getMacAddress(){
+
+        String macSerial = null;
+        String str = "";
+        try {
+            Process pp = Runtime.getRuntime().exec("cat /sys/class/net/wlan0/address ");
+            InputStreamReader ir = new InputStreamReader(pp.getInputStream());
+            LineNumberReader input = new LineNumberReader(ir);
+
+            for (; null != str;) {
+                str = input.readLine();
+                if (str != null) {
+                    macSerial = str.trim();
+                    break;
+                }
+            }
+        } catch (IOException ex) {
+            // 赋予默认值
+            ex.printStackTrace();
+        }
+        return macSerial;
+    }
+
+    /**
+     *读取清单文件中String类型的数据
+     * @param context
+     * @param metaKey
+     * @return
+     */
+    public static String getMetaStringValue(Context context, String metaKey){
+        Bundle metaData = null;
+        String metaValue = null;
+        if (context == null || metaKey == null) {
+            return null;
+        }
+        try {
+            ApplicationInfo ai = context.getPackageManager().getApplicationInfo(
+                    context.getPackageName(), PackageManager.GET_META_DATA);
+            if (null != ai) {
+                metaData = ai.metaData;
+            }
+            if (null != metaData) {
+                metaValue = metaData.getString(metaKey);
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+        }
+        return metaValue;
+    }
+
+    /**
+     *读取清单文件中的int类型的数据
+     * @param context
+     * @param metaKey
+     * @return
+     */
+    public static int getMetaIntValue(Context context, String metaKey){
+        Bundle metaData = null;
+        int metaValue = -1;
+        if (context == null || metaKey == null) {
+            return -1;
+        }
+        try {
+            ApplicationInfo ai = context.getPackageManager().getApplicationInfo(
+                    context.getPackageName(), PackageManager.GET_META_DATA);
+            if (null != ai) {
+                metaData = ai.metaData;
+            }
+            if (null != metaData) {
+                metaValue = metaData.getInt(metaKey);
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+        }
+        return metaValue;
+    }
+
+    /**
+     *获取当前版本号
+     * @return
+     */
+    public static int getVersionCode(Context context){
+        try {
+            PackageInfo pi = context.getPackageManager().getPackageInfo("com.android.launcher1905",0);
+            return pi.versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    /**
+     *获取当前版本名称
+     * @return
+     */
+    public static String getVersionName(Context context){
+        try {
+            PackageInfo pi = context.getPackageManager().getPackageInfo("com.android.launcher1905",0);
+            return pi.versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
 }

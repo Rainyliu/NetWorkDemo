@@ -16,11 +16,19 @@
         android:smallScreens="true" />
 
     <application
+        android:name=".MainApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="designWidth"
+            android:value="1920" />
+        <meta-data
+            android:name="designHeight"
+            android:value="600" />
+
         <activity android:name=".MainActivity" />
         <activity android:name=".eventbus.SendEventActivity" />
         <activity android:name=".eventbus.ReceiverEventActivity" />
@@ -28,23 +36,29 @@
         <activity android:name=".ui.RxBusActivity" />
         <activity
             android:name=".ui.VideoActivity"
-            android:screenOrientation="landscape">
-
-        </activity>
+            android:screenOrientation="landscape" />
         <activity android:name=".ui.TvHomeActivity" />
         <activity
             android:name=".ui.ReflectionImageActivity"
             android:screenOrientation="landscape" />
         <activity
             android:name=".ui.CustomVideoActivity"
-            android:screenOrientation="landscape"></activity>
-        <activity android:name=".ui.DemoActivity">
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.DemoActivity"
+            android:screenOrientation="landscape">
+
+        </activity>
+        <activity android:name=".ui.settings.SettingsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.settings.FileSettingsActivity" />
+        <activity android:name=".ui.TestActivity"
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>

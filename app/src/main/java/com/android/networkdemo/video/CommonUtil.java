@@ -34,7 +34,7 @@ public class CommonUtil {
             }
             v.height = (int) (height * r);
             if(v.height == 0)
-                v.height = GlobalConsts.screenHeigh;
+                v.height = GlobalConsts.screenHeight;
         }else{
             v.width = iconWidth;
             float r = 0;
@@ -55,7 +55,7 @@ public class CommonUtil {
         double fit1 = videoWidth * 1.0 / videoHeight;
 
         int width2 = GlobalConsts.screenWidth;
-        int height2 = GlobalConsts.screenHeigh;
+        int height2 = GlobalConsts.screenHeight;
         double fit2 = width2 * 1.0 / height2;
 
         double fit = 1;

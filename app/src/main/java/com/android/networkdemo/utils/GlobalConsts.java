@@ -7,11 +7,13 @@ package com.android.networkdemo.utils;
  */
 
 public class GlobalConsts {
-    public static float Rx;
-    public static float Ry;
+    //静态变量在内存紧张的时候会被回收
+    public static float Rx = 1f;
+    public static float Ry = 1f;
 
-    public static int screenWidth;
-    public static int screenHeigh;
+    public static int screenWidth = 1920;//设计图的高
+    public static int screenHeight = 1080;//设计图的宽
 
     public static boolean isVideoPrepareComplete = false;
+    public static String BG_CHANGE_ACTION = "com.rainy.networkdemo.BG_CHANGE_ACTION";
 }
