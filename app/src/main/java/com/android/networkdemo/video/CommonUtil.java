@@ -70,6 +70,7 @@ public class CommonUtil {
         viewSize.height = (int) (fit * videoHeight);
 
         return viewSize;
+
     }
 
     private static long m_lSysNetworkSpeedLastTs = 0;
