@@ -27,7 +27,7 @@
             android:value="1920" />
         <meta-data
             android:name="designHeight"
-            android:value="600" />
+            android:value="1080" />
 
         <activity android:name=".MainActivity" />
         <activity android:name=".eventbus.SendEventActivity" />
@@ -46,19 +46,28 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".ui.DemoActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".ui.settings.SettingsActivity" />
+        <activity android:name=".ui.settings.FileSettingsActivity" />
+        <activity
+            android:name=".ui.TestActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".ui.VectorActivity" />
+        <activity android:name=".ui.KeyCodeActivity" />
+        <activity
+            android:name=".ui.video.SurfaceVideoActivity"
             android:screenOrientation="landscape">
-
-        </activity>
-        <activity android:name=".ui.settings.SettingsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.settings.FileSettingsActivity" />
-        <activity android:name=".ui.TestActivity"
-            android:screenOrientation="landscape"></activity>
+        <activity android:name=".ui.video.SurfaceVideoActivity1"></activity>
+        <activity android:name=".ui.video.SurfaceVideoActivity2"></activity>
+        <activity android:name=".ui.SelectLabelActivity">
+
+        </activity>
     </application>
 
 </manifest>
