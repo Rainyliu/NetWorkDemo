@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.android.networkdemo.ui.VectorActivity">
+    <ImageView
+        app:srcCompat="@drawable/ic_link_black_24dp"
+        android:id="@+id/iv1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/btn_slt"/>
+    <ImageView
+        android:id="@+id/btn_anim"
+        android:onClick="anim"
+        app:srcCompat="@drawable/sqareanim_target"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+</LinearLayout>
