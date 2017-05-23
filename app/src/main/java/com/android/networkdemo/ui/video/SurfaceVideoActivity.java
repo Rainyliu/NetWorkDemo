@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.android.networkdemo.R;
 import com.android.networkdemo.utils.StringUtils;
+import com.orhanobut.logger.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,6 +41,7 @@ public class SurfaceVideoActivity extends AppCompatActivity {
     private SurfaceHolder holder;
     private MediaPlayer player;
     public static String URL = "http://9890.vod.myqcloud.com/9890_9c1fa3e2aea011e59fc841df10c92278.f20.mp4";
+//    public static String URL = "http://video.cdn.hd1905.com/movie/feichangrenfan1-needfix.ts?t=1493870367&k=7c889b624279d01eaf402780c0f38eda";
     private int currentPosition = 0;
     private int duration;
     private boolean isPlaying;
@@ -104,7 +106,7 @@ public class SurfaceVideoActivity extends AppCompatActivity {
 
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-//            Log.d(TAG, "onProgressChanged: 进度条改变了"+"===progress=="+progress+"====fromUser==="+fromUser);
+            Log.d(TAG, "onProgressChanged: 进度条改变了"+"===progress=="+progress+"====fromUser==="+fromUser);
 //            startTime.setText(progress+"毫秒");
             startTime.setText(StringUtils.msToString(progress));
 
@@ -330,7 +332,7 @@ public class SurfaceVideoActivity extends AppCompatActivity {
 //            player.prepareAsync();
             player.prepare();
 //            player.start();
-            Log.e(TAG, "duration====="+player.getDuration() + "");
+//            Log.e(TAG, "duration====="+player.getDuration() + "");
 
             //设置播放监听回调
             setPlayerListener();
@@ -362,14 +364,14 @@ public class SurfaceVideoActivity extends AppCompatActivity {
                 Log.d(TAG, "onPrepared: 装载完成");
                 Log.d(TAG, "onPrepared: ");
                 // TODO Auto-generated method stub
-                width = player.getVideoWidth();
-                height = player.getVideoHeight();
-                if (width != 0 && height != 0)
-                {
-                    holder.setFixedSize(width, height);// 设置视频高宽
+//                width = player.getVideoWidth();
+//                height = player.getVideoHeight();
+//                if (width != 0 && height != 0)
+//                {
+//                    holder.setFixedSize(width, height);// 设置视频高宽
                     player.start();
                     Log.i(TAG, player.getDuration() + "");
-                }
+//                }
                 currentPosition = player.getCurrentPosition();
                 duration = player.getDuration();
                 startTime.setText(StringUtils.msToString(currentPosition));
@@ -377,6 +379,7 @@ public class SurfaceVideoActivity extends AppCompatActivity {
                 //按照初始位置播放
                 player.seekTo(currentPosition);
                 // 设置进度条的最大进度为视频流的最大播放时长
+                seekBar.setProgress(currentPosition);
                 seekBar.setMax(player.getDuration());
 
                 // 开始线程，更新进度条的刻度
@@ -387,6 +390,7 @@ public class SurfaceVideoActivity extends AppCompatActivity {
                             isPlaying = true;
                             while (isPlaying) {
                                 int current = player.getCurrentPosition();
+                                Logger.d("进入到了线程，开始更新进度current=="+current);
                                 seekBar.setProgress(current);
 
                                 sleep(500);
@@ -422,9 +426,11 @@ public class SurfaceVideoActivity extends AppCompatActivity {
         player.setOnErrorListener(new MediaPlayer.OnErrorListener() {
             @Override
             public boolean onError(MediaPlayer mp, int what, int extra) {
-                Log.d(TAG, "onError: 发生错误");
+                Log.d(TAG, "onError: 发生错误=="+what);
+                start(currentPosition);
                 //发生错误
                 isPlaying = false;
+                // 发生错误重新播放
                 return false;
             }
         });
@@ -432,7 +438,7 @@ public class SurfaceVideoActivity extends AppCompatActivity {
         player.setOnInfoListener(new MediaPlayer.OnInfoListener() {
             @Override
             public boolean onInfo(MediaPlayer mp, int what, int extra) {
-                Log.d(TAG, "onInfo: 视频的相关信息");//不知道何时会调用
+                Log.d(TAG, "onInfo: 视频的相关信息==="+what);//不知道何时会调用
                 return false;
             }
         });
@@ -482,4 +488,14 @@ public class SurfaceVideoActivity extends AppCompatActivity {
             showNetSpeed();
         }
     };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(player != null){
+            player.reset();
+            player.release();
+            player = null;
+        }
+    }
 }
