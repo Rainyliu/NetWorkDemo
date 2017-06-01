@@ -57,13 +57,18 @@
         <activity android:name=".ui.KeyCodeActivity" />
         <activity
             android:name=".ui.video.SurfaceVideoActivity"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name=".ui.video.SurfaceVideoActivity1" />
+        <activity android:name=".ui.video.SurfaceVideoActivity2" />
+        <activity android:name=".ui.SelectLabelActivity" />
+        <activity android:name=".ui.video.SurfaceVideoActivity3" />
+        <activity
+            android:name=".ui.animal.AnimActivity"
             android:screenOrientation="landscape">
 
         </activity>
-        <activity android:name=".ui.video.SurfaceVideoActivity1" />
-        <activity android:name=".ui.video.SurfaceVideoActivity2" />
-        <activity android:name=".ui.SelectLabelActivity"></activity>
-        <activity android:name=".ui.video.SurfaceVideoActivity3">
+        <activity android:name=".ui.animal.VideoAnimActivity"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
